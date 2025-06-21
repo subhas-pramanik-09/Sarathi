@@ -14,22 +14,17 @@ from utils import get_landmarks, load_camera_parameters
 from arg_parser import get_args
 from posture import classify_posture
 
-
 mp_pose = mp.solutions.pose
 pose_model = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
 mp_drawing = mp.solutions.drawing_utils
 
-
-# Initialize mixer and folders
 pygame.mixer.init()
 sound = None
 SCREENSHOT_DIR = "screenshots"
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
-# Streamlit UI Setup
 st.set_page_config(page_title="Drowsiness & Posture Monitor", layout="wide")
 
-# Load custom CSS
 st.markdown("""
 <style>
 body { background-color: #f9fafb; font-family: 'Segoe UI', sans-serif; }
@@ -51,11 +46,9 @@ header, .reportview-container .main { padding: 2rem; }
 </style>
 """, unsafe_allow_html=True)
 
-# Sidebar Navigation
 st.sidebar.title("📊 SARATHI")
 menu = st.sidebar.radio("Go to", ["Front View (Face)", "Side View (Posture)", "Alerts Gallery"])
 
-# Landmark groups for drawing
 LANDMARK_GROUPS = {
     "left_eye": [33, 160, 158, 133, 153, 144, 33],
     "right_eye": [362, 385, 387, 263, 373, 380, 362],
@@ -104,7 +97,6 @@ def draw_selected_landmarks(image, landmarks, frame_size):
             pt2 = tuple((landmarks[group[i + 1], :2] * [w, h]).astype(int))
             cv2.line(image, pt1, pt2, (0, 0, 255), 1)
 
-
 def draw_pupil_centers(frame, landmarks, frame_size):
     h, w = frame_size[1], frame_size[0]
     left_pts = np.array([landmarks[i][:2] * [w, h] for i in [474, 475, 476, 477]], dtype=np.float32)
@@ -142,12 +134,12 @@ def process_frame(frame, detector, eye_det, head_pose, scorer, frame_size):
             cv2.putText(frame, f"Yaw: {yaw[0]:.1f}", (10, frame_size[1] - 30), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 1)
     return frame, alerts
 
-
 def dashboard(detector, eye_det, head_pose, scorer, args):
     st.markdown("<div class='block-header'>🧠 Front View - Drowsiness and Fatigue Detection</div>", unsafe_allow_html=True)
     start_col, stop_col = st.columns([1, 1])
     video_placeholder = st.empty()
     cap = None
+    prev_time = time.time()  # For FPS calculation
 
     if start_col.button("Start Camera"):
         cap = cv2.VideoCapture(args.camera)
@@ -170,8 +162,16 @@ def dashboard(detector, eye_det, head_pose, scorer, args):
             frame = cv2.resize(frame, (400, 200))
             frame_size = frame.shape[1], frame.shape[0]
             processed, messages = process_frame(frame, detector, eye_det, head_pose, scorer, frame_size)
+
             for msg in messages:
                 cv2.putText(processed, msg, (10, 30 + 30 * messages.index(msg)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+
+            # === FPS Calculation ===
+            curr_time = time.time()
+            fps = 1 / (curr_time - prev_time)
+            prev_time = curr_time
+            cv2.putText(processed, f"FPS: {fps:.2f}", (10, frame_size[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
+
             video_placeholder.image(processed, channels="BGR", use_container_width=True)
 
 def side_posture_monitor():
