@@ -13,7 +13,7 @@ Developed during *Hack4Bengal 4.0* – Eastern India's Largest Hackathon, SARATH
 ---
 | Front View | Side View |
 |--------|---------|
-| ![Front View](https://github.com/user-attachments/assets/8fb8087d-81d5-4952-8b27-e60a220ff531) | ![Side View](https://github.com/user-attachments/assets/dabc7f94-fc47-4cf0-96ac-bd456423ebba) |
+| ![Front View](https://github.com/user-attachments/assets/8fb8087d-81d5-4952-8b27-e60a220ff531) | ![Side View](https://github.com/user-attachments/assets/3d908436-dbb5-400b-803e-ace2f6a058f7)) |
 
 
 
