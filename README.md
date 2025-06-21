@@ -9,7 +9,8 @@
 **SARATHI** is a real-time AI-based driver and pilot attention monitoring system that **detects drowsiness**, **unsafe posture**, and **inattentiveness** using only a single webcam. It serves as a **digital co-pilot**, ensuring that no fatigue-related accident goes unnoticed.
 
 Developed during **Hack4Bengal 4.0** – Eastern India's Largest Hackathon, SARATHI addresses one of the deadliest causes of transport-related deaths — **fatigue**.
-
+---
+YouTube Video Link : https://youtu.be/lDf7jZFTieQ
 ---
 | Front View | Side View |
 |--------|---------|
