@@ -6,9 +6,9 @@
 
 ## 📍 Overview
 
-*SARATHI* is a real-time AI-based driver and pilot attention monitoring system that *detects drowsiness, **unsafe posture, and **inattentiveness using only a single webcam. It serves as a **digital co-pilot*, ensuring that no fatigue-related accident goes unnoticed.
+**SARATHI** is a real-time AI-based driver and pilot attention monitoring system that **detects drowsiness**, **unsafe posture**, and **inattentiveness** using only a single webcam. It serves as a **digital co-pilot**, ensuring that no fatigue-related accident goes unnoticed.
 
-Developed during *Hack4Bengal 4.0* – Eastern India's Largest Hackathon, SARATHI addresses one of the deadliest causes of transport-related deaths — *fatigue*.
+Developed during **Hack4Bengal 4.0** – Eastern India's Largest Hackathon, SARATHI addresses one of the deadliest causes of transport-related deaths — **fatigue**.
 
 ---
 | Front View | Side View |
@@ -19,12 +19,12 @@ Developed during *Hack4Bengal 4.0* – Eastern India's Largest Hackathon, SARATH
 
 ## 🚀 Key Features (USPs)
 
-- ✅ *Dual-layer Detection: Simultaneously monitors **eye behavior, **head pose, and **body posture*  
-- 🖼 *Screenshot Capture*: Takes periodic screenshots during alert states  
-- 📣 *Smart Alerts*: Audio alarm + visual warnings when fatigue is detected  
-- 💡 *Lightweight*: No heavy ML models — optimized for laptops & Raspberry Pi  
-- 🔋 *Low Resource Usage*: CPU-efficient, real-time performance  
-- 🔧 *Fully Modular*: Easily extendable for dual camera or IoT deployment
+- ✅ **Dual-layer Detection**: Simultaneously monitors **eye behavior**, **head pose**, and **body posture***  
+- 🖼 **Screenshot Capture**: Takes periodic screenshots during alert states  
+- 📣 **Smart Alerts**: Audio alarm + visual warnings when fatigue is detected  
+- 💡 **Lightweight**: No heavy ML models — optimized for laptops & Raspberry Pi  
+- 🔋 **Low Resource Usage**: CPU-efficient, real-time performance  
+- 🔧 **Fully Modular**: Easily extendable for dual camera or IoT deployment
 
 ---
 
@@ -53,24 +53,25 @@ Developed during *Hack4Bengal 4.0* – Eastern India's Largest Hackathon, SARATH
 
 ### 🔄 1. Clone the Repository
 
-bash
+```bash
 git clone https://github.com/your-username/sarathi.git
+```
 
-bash
+```bash
 cd sarathi
-
+```
 
 ### 🛠 2. Install Requirements
 
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 ### ▶ 3. Launch the App
 
-bash
+```bash
 streamlit run driver_state_detection/app.py
-
+```
 
 > ⚠ Make sure your webcam is connected and accessible.
 
@@ -78,12 +79,12 @@ streamlit run driver_state_detection/app.py
 
 ## 🧪 Technical Workflow
 
-SARATHI performs *attention analysis* using:
-- 👁 *Eye landmarks* to detect prolonged closure or gaze shifts
-- 🧠 *Head pose* (pitch, yaw, roll) to monitor orientation
-- 🧍 *Posture deviation* using shoulder & spine angles
+SARATHI performs **attention analysis** using:
+- 👁 **Eye landmarks** to detect prolonged closure or gaze shifts
+- 🧠 **Head pose** (pitch, yaw, roll) to monitor orientation
+- 🧍 **Posture deviation** using shoulder & spine angles
 
-🧠 *If any threshold is crossed*:
+🧠 **If any threshold is crossed**:
 - Screenshot is captured
 - Audio alarm is triggered
 - Visual status bar updates on Streamlit UI
@@ -102,27 +103,27 @@ SARATHI performs *attention analysis* using:
 
 ## 🌱 Future Enhancements
 
-- 📷 *Dual camera setup* (side + front view) using IoT (e.g., Raspberry Pi)
-- 🧘 *User posture calibration* on startup for custom thresholds
-- ✋ *Gesture-based alert dismissal* using hand detection
-- 🚨 *SOS Trigger*: Auto-message if alert persists beyond limit
-- 🌒 *Night mode* via IR camera support
+- 📷 **Dual camera setup** (side + front view) using IoT (e.g., Raspberry Pi)
+- 🧘 **User posture calibration** on startup for custom thresholds
+- ✋ **Gesture-based alert dismissal** using hand detection
+- 🚨 **SOS Trigger**: Auto-message if alert persists beyond limit
+- 🌒 **Night mode** via IR camera support
 
 ---
 
 ## 🏁 Developed At
 
-*Hack4Bengal 4.0 – June 2025*  
-Team Name: *Dot Slash*  
-Team Lead: *Dipan Mazumder*  
-Team Member: *Subhas Pramanik*
+**Hack4Bengal 4.0 – June 2025**  
+Team Name: **Dot Slash**  
+Team Lead: **Dipan Mazumder**  
+Team Member: **Subhas Pramanik**
 
 ---
 
 ## 🕉 Why the Name "SARATHI"?
 
-In ancient Indian tradition, *SARATHI* means “charioteer” — the one who safely drives the warrior through chaos.  
-In our context, SARATHI acts as a *modern digital guide, **monitoring attentiveness, **preventing fatigue-induced danger, and **saving lives* through intelligence.
+In ancient Indian tradition, **SARATHI** means “charioteer” — the one who safely drives the warrior through chaos.  
+In our context, SARATHI acts as a **modern digital guide**, **monitoring attentiveness**, **preventing fatigue**-induced danger, and **saving lives** through intelligence.
 
 ---
 
